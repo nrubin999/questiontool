@@ -29,7 +29,7 @@ Template.answers.helpers({
       answers[a].text = answers[a].text.replace(/\B(@\S+)/g, '<strong>$1</strong>');
       const urlRegex = new RegExp(SimpleSchema.RegEx.Url.source.slice(1, -1), 'ig');
       answers[a].text = answers[a].text.replace(urlRegex, url =>
-        '<a target="_blank" class="questionLink" rel="nofollow" href="' + url + '">' + url + '</a>');
+        '<a target="_blank" class="questionLink" rel="nofollow" href="' + Meteor.absoluteUrl() + url + '">' + Meteor.absoluteUrl() + url + '</a>');
     }
 
     return answers;

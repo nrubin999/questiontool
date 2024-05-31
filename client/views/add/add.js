@@ -20,7 +20,7 @@ function checkPrevMod(modBoxes) {
 Template.add.onCreated(function () {
   this.numberOfNewMods = new ReactiveVar(1);
   if (this.data.admin !== Meteor.user().emails[0].address) {
-    Router.go('/');
+    Router.go(Meteor.absoluteUrl());
   }
 });
 

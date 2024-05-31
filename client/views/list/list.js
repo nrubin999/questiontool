@@ -638,7 +638,7 @@ Template.list.events({
     // return Users.find({name: {$regex: re}});
   },
   'click .facebookbutton': function (event, template) {
-    popupwindow('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/list/' + template.data.slug), 'Share Question Tool!', 600, 400);
+    popupwindow('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(Meteor.absoluteUrl() + 'list/' + template.data.slug), 'Share Question Tool!', 600, 400);
   },
   'click .twitterbutton': function (event, template) {
     const questionDiv = event.target.parentElement.parentElement.parentElement;
@@ -646,7 +646,7 @@ Template.list.events({
     if (questionText.length > 35) {
       questionText = questionText.substring(0, 34);
     }
-    const tweetText = 'Check out this question: "' + questionText + '..." on Question Tool by @berkmancenter ' + window.location.origin + '/list/' + template.data.slug;
+    const tweetText = 'Check out this question: "' + questionText + '..." on Question Tool by @berkmancenter ' + Meteor.absoluteUrl() + 'list/' + template.data.slug;
     popupwindow('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'Share Question Tool!', 600, 400);
   },
   'click #modbutton': function (event, template) {

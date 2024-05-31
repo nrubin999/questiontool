@@ -27,7 +27,7 @@ Template.nav.events({
   'click #navHome': function (event, template) {
     document.getElementById('searchbar').value = '';
     Session.set('search', '');
-    Router.go('/');
+    Router.go(Meteor.absoluteUrl());
   },
   'click #darker': function (event, template) {
     $('.formcontainer').fadeOut(400);
@@ -38,7 +38,7 @@ Template.nav.events({
   'click #navCode': function(event, template) {
     const parentNode = document.getElementById('nav');
     popoverTemplate = Blaze.renderWithData(Template.qr_code, {
-      link: Meteor.absoluteUrl() + `/list/${template.data.slug}`
+      link: Meteor.absoluteUrl() + `list/${template.data.slug}`
     }, parentNode);
   },
   'click #navArchive': function(event, template) {

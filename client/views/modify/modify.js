@@ -16,7 +16,7 @@ Template.modify.onCreated(() => {
       // If not, redirects back to the list page
       const instanceid = Questions.findOne({ _id: quest }).instanceid;
       const slug = Instances.findOne({ _id: instanceid }).slug;
-      window.location.href = '/list/' + slug;
+      window.location.href = Meteor.absoluteUrl() + 'list/' + slug;
     }
   });
 });

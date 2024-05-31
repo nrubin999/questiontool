@@ -11,4 +11,7 @@ Template.instance_div.helpers({
   date_format(lasttouch) {
     return moment(lasttouch).format('LLL');
   },
+  absolute_url() {
+    return Meteor.absoluteUrl();
+  },
 });

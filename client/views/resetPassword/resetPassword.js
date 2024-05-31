@@ -29,7 +29,7 @@ Template.ResetPassword.events({
           showError('Something went wrong', 'inputcontainer', 'resetPassword');
         } else {
           console.log('Password has been changed');
-          window.location.href = '/';
+          window.location.href = Meteor.absoluteUrl();
         }
       });
     }

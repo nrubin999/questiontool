@@ -40,7 +40,7 @@ Template.ForgotPassword.events({
         $('.formcontainer').fadeOut(400);
         $('#darker').fadeOut(400);
         var sAlertId = sAlert.success('Email sent, check your mailbox', {timeout: 4000, position: 'top-right', onClose: function() {
-          window.location.href = '/';
+          window.location.href = Meteor.absoluteUrl();
           sAlert.close(sAlertId);
         }});
       }

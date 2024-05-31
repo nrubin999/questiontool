@@ -13,7 +13,7 @@ Template.combine.onCreated(function () {
   Meteor.call('adminCheck', this.data.instanceid, (e, r) => {
     if (!r) {
       // If not, redirects back to the list page
-      window.location.href = '/';
+      window.location.href = Meteor.absoluteUrl();
     }
   });
 });

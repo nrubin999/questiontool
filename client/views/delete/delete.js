@@ -24,7 +24,7 @@ Template.delete.events({
         currentError = Blaze.renderWithData(Template.form_error, e, document.getElementsByClassName('deleteError')[0]);
       } else {
         removePopover();
-        Router.go('/');
+        Router.go(Meteor.absoluteUrl());
       }
     });
   },

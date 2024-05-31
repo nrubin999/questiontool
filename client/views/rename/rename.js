@@ -33,7 +33,7 @@ Template.rename.events({
       } else if (result) {
         const isList = template.data.isList;
         if (isList) {
-          window.location.href = '/list/' + Instances.findOne({ _id: table._id }).slug;
+          window.location.href = Meteor.absoluteUrl() + 'list/' + Instances.findOne({ _id: table._id }).slug;
         } else {
           Blaze.remove(popoverTemplate);
         }

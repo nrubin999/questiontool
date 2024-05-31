@@ -216,4 +216,23 @@ Template.home.events({
     event.stopPropagation();
   },
 });
+
+Template.not_found.helpers({
+  absolute_url() {
+    return Meteor.absoluteUrl();
+  },
+});
+
+Template.loading.helpers({
+  absolute_url() {
+    return Meteor.absoluteUrl();
+  },
+});
+
+Template.form_error.helpers({
+  absolute_url() {
+    return Meteor.absoluteUrl();
+  },
+});
+
 /* eslint-enable func-names, no-unused-vars */
