@@ -7,7 +7,7 @@ SyncedCron.add({
     return parser.text('every 1 day');
   },
   job() {
-    const twentyNineDaysAgo = new Date(new Date().getTime() - 29 * 24 * 60 * 60 * 1000);
+    const   twentyNineDaysAgo = new Date(new Date().getTime() - 29 * 24 * 60 * 60 * 1000);
     const thirtyDaysAgo = new Date(new Date().getTime() - 30 * 24 * 60 * 60 * 1000);
     const oldInstances = Instances.find({ lasttouch: { $lt: +twentyNineDaysAgo, $gt: +thirtyDaysAgo } }).fetch();
     for (let i = 0; i < oldInstances.length; i++) {
